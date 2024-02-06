@@ -1,64 +1,89 @@
 @extends('admin.layouts.master')
 
 @section('title')
-      Role Manage
-  @endsection
+    Role Manage
+@endsection
 
 @section('content')
-<section class="section">
-    <div class="section-body">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <x-cardheader title="Roles" />
-              
-              <div class="card-body">
-              <div class="table-responsive text-nowrap">
-    <table class="table table-striped">
-      <thead>
-                      <tr>
-                        <th>No</th>
-                        <th></th>
-                        <th>Role Name</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($roles as $key => $role)
-                      <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td></td>
-                        <td>{{ $role->name }}</td>
-                        <td>
-                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
-                                <i class="fa fa-eye text-success" aria-hidden="true"></i>
-                            </button>
-                            @can('role-edit')
-                            <a href="{{ route('roles.edit',$role->id) }}" class="btn "><i class="fa fa-edit text-dark" aria-hidden="true"></i></a>
-                            @endcan
-                            @can('role-delete')
-                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
-                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                            </button>
+    <section class="section">
+        <div class="section-body">
+          <div class="row">
+            <div class="col-12">
+                <div class="card-header d-flex justify-content-between">
+                  <h3>
+                    Roles
+                  </h3>
 
-                            <form id="delete-form-{{ $role->id }}" action="{{ route('roles.destroy', $role->id) }}" method="post"
-                                  style="display:none;">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                            @endcan
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+                  <div class=" text-right">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fa fa-plus text-primary" aria-hidden="true"></i> Add User
+                    </button>
                 </div>
-              </div>
+
+                </div>
             </div>
-          </div>
+
         </div>
-    </div>
-</section>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                      
+
+                        <div class="card-body">
+                            <div class="table-responsive text-nowrap">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th></th>
+                                            <th>Role Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($roles as $key => $role)
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td></td>
+                                                <td>{{ $role->name }}</td>
+                                                <td>
+                                                    <button class="btn" type="button"
+                                                        >
+                                                        <i class="fa fa-eye text-success" aria-hidden="true"></i>
+                                                    </button>
+                                                    @can('role-edit')
+                                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn">
+                                                            <i class="fa fa-edit text-dark" aria-hidden="true"></i>
+                                                        </a>
+                                                    @endcan
+                                                    @can('role-delete')
+                                                        <button class="btn" type="button"
+                                                            onclick="deleteItem({{ $role->id }})">
+                                                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                                                        </button>
+
+                                                        <form id="delete-form-{{ $role->id }}"
+                                                            action="{{ route('roles.destroy', $role->id) }}" method="post"
+                                                            style="display:none;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                    @endcan
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 @endsection
 
 @push('js')
@@ -84,7 +109,7 @@
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
-                    document.getElementById('delete-form-'+id).submit();
+                    document.getElementById('delete-form-' + id).submit();
                 } else if (
                     // Read more about handling dismissals
                     result.dismiss === swal.DismissReason.cancel
