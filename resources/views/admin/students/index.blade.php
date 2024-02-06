@@ -13,8 +13,8 @@
               <x-cardheader title="Students" />
               <div class="card-body">
               <div class="table-responsive text-nowrap">
-                  <table class="table table-striped" id="table-1">
-                    <thead class="table-dark">
+    <table class="table table-striped">
+      <thead>
                       <tr>
                         <th>No</th>
                         <th>Name</th>
