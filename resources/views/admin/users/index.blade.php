@@ -54,13 +54,24 @@
                         </td>
                         <td>
                             @can('user-edit')
-                              <a class="btn btn-warning" href="{{ route('users.view',$user->id) }}">View</a>
-                              <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                            <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('users.edit',$user->id) }}"><i class="ti ti-pencil me-1"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-1"></i> Delete</a>
+              </div>
+            </div>
+                              <!-- <a class="btn "href="{{ route('users.view',$user->id) }}">
+                                <i class="fa fa-eye text-success" aria-hidden="true"></i>
+                            </a> -->
+                              <!-- <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">
+                              <i class="fa fa-edit text-dark" aria-hidden="true"></i>
+                            </a> -->
                             @endcan
                             @can('user-delete')
-                            <button class="btn btn-danger" type="button" onclick="deleteItem({{ $user->id }})">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
+                            <!-- <button class="btn" type="button" onclick="deleteItem({{ $user->id }})">
+                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </button> -->
                             <form id="delete-form-{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="post"
                                   style="display:none;">
                                 @csrf

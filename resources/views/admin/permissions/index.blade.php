@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <x-cardheader title="Permissions" /> 
+              <x-cardheader title="Permissions" />
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped" id="table-1">
@@ -30,7 +30,9 @@
                         <td></td>
                         <td>
                             @can('permission-edit')
-                            <a class="btn btn-primary" href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
+                            <a class="btn btn-primary" href="{{ route('permissions.edit',$permission->id) }}">
+                            <i class="fa fa-edit text-dark" aria-hidden="true"></i>
+                            </a>
                             @endcan
                             @can('permission-delete')
                             <button class="btn btn-danger" type="button" onclick="deleteItem({{ $permission->id }})">

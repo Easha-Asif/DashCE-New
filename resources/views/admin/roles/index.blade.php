@@ -11,7 +11,7 @@
           <div class="col-12">
             <div class="card">
               <x-cardheader title="Roles" />
-              
+
               <div class="card-body">
               <div class="table-responsive text-nowrap">
     <table class="table table-striped">
