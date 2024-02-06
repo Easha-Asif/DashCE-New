@@ -1,0 +1,61 @@
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLmNzcyIsInNvdXJjZXMiOlsiY3VzdG9tLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiJ9 */
+
+/*# sourceMappingURL=custom.css.map */
+
+
+.profileImagesUploader label,
+.profileImagesUploader label figure {
+    width: 180px;
+    height: 180px;
+    display: contents;
+}
+.img-thumbnail {
+    width: 300px;
+    height: 140px;
+    object-fit: contain;
+    padding: 3px 0px;
+    border-radius: 0;
+}
+label.cabinet {
+    cursor: pointer;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.cabinet figcaption i {
+    padding: 7px 12px;
+    display: inline-block;
+    font-size: 20px;
+    background: linear-gradient(to top, #ff08c9 0%, #00aeff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 0px 15px 10px -16px #999;
+    line-height: 1.5;
+    transition: all 0.4s;
+    border: 1px solid #00aeff;
+}
+.cabinet figcaption i {
+    background-color: #999;
+    color: #fff;
+    color: #fff;
+    font-size: 18px;
+    bottom: 15px;
+    position: absolute;
+    left: 75%;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #ff08c9, #00aeff);
+}
+/*i {
+    margin-right: 10px;
+}*/
+label.cabinet input.file {
+    position: relative;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    margin-top: -30px;
+}
