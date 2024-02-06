@@ -11,6 +11,7 @@
           <div class="col-12">
             <div class="card">
               <x-cardheader title="Roles" />
+              
               <div class="card-body">
               <div class="table-responsive text-nowrap">
     <table class="table table-striped">
@@ -33,7 +34,7 @@
                                 <i class="fa fa-eye text-success" aria-hidden="true"></i>
                             </button>
                             @can('role-edit')
-                            <a href="{{ route('roles.edit',$role->id) }}" class="btn "><i class="fa fa-edit text-primary" aria-hidden="true"></i></a>
+                            <a href="{{ route('roles.edit',$role->id) }}" class="btn "><i class="fa fa-edit text-dark" aria-hidden="true"></i></a>
                             @endcan
                             @can('role-delete')
                             <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
