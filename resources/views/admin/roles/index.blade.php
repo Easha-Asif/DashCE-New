@@ -29,13 +29,17 @@
                         <td></td>
                         <td>{{ $role->name }}</td>
                         <td>
+                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
+                                <i class="fa fa-eye text-success" aria-hidden="true"></i>
+                            </button>
                             @can('role-edit')
-                            <a href="{{ route('roles.edit',$role->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('roles.edit',$role->id) }}" class="btn "><i class="fa fa-edit text-primary" aria-hidden="true"></i></a>
                             @endcan
                             @can('role-delete')
-                            <button class="btn btn-danger" type="button" onclick="deleteItem({{ $role->id }})">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
+                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                             </button>
+
                             <form id="delete-form-{{ $role->id }}" action="{{ route('roles.destroy', $role->id) }}" method="post"
                                   style="display:none;">
                                 @csrf
