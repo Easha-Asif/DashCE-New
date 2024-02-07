@@ -1565,6 +1565,28 @@ pre code {
         order: 2
     }
 
+    .dropdown-menu {
+        min-width: auto; /* Adjust this as needed */
+    }
+
+    .dropdown-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        color: #212529; /* Adjust text color */
+        text-decoration: none;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa; /* Adjust hover background color */
+        color: #212529; /* Adjust hover text color */
+    }
+
+    .dropdown-item i {
+        margin-right: 0.5rem;
+    }
+
+
     .order-lg-3 {
         -ms-flex-order: 3;
         -webkit-box-ordinal-group: 4;
