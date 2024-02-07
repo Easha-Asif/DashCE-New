@@ -49,20 +49,27 @@
                             @endif
                         </td>
                         <td>
-                            @can('user-edit')
-                              <a class="btn btn-warning" href="{{ route('brokerages.view',$user->id) }}">View</a>
-                              <a class="btn btn-primary" href="{{ route('brokerages.edit',$user->id) }}">Edit</a>
-                            @endcan
-                            @can('user-delete')
-                            <button class="btn btn-danger" type="button" onclick="deleteItem({{ $user->id }})">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                            <form id="delete-form-{{ $user->id }}" action="{{ route('brokerages.destroy', $user->id) }}" method="post"
-                                  style="display:none;">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                            @endcan
+                        <div class="dropdown">
+    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+        <i class="ti ti-dots-vertical"></i>
+    </button>
+    <div class="dropdown-menu">
+        @can('user-edit')
+            <a class="dropdown-item btn btn-warning" href="{{ route('brokerages.view', $user->id) }}">View</a>
+            <a class="dropdown-item btn btn-primary" href="{{ route('brokerages.edit', $user->id) }}">Edit</a>
+        @endcan
+        @can('user-delete')
+            <button class="dropdown-item btn btn-danger" type="button" onclick="deleteItem({{ $user->id }})">
+                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+            </button>
+            <form id="delete-form-{{ $user->id }}" action="{{ route('brokerages.destroy', $user->id) }}" method="post" style="display:none;">
+                @csrf
+                @method('DELETE')
+            </form>
+        @endcan
+    </div>
+</div>
+
                         </td>
                       </tr>
                       @endforeach
