@@ -11,6 +11,7 @@ Student Manage
             <div class="col-12">
                 <div class="card">
                     <x-cardheader title="Students" />
+                    <x-forms.primary-button id="createButton" class="float-right">Create</x-forms.primary-button>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-striped">
