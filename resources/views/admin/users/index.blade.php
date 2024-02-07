@@ -11,6 +11,8 @@ User Manage
             <div class="col-12">
                 <div class="card">
                     <x-cardheader title="Users" />
+                    <x-forms.primary-button id="createButton" class="float-right">Create</x-forms.primary-button>
+
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-striped">
@@ -134,6 +136,14 @@ function deleteItem(id) {
         }
     })
 }
+  // Get the button element
+  var createButton = document.getElementById('createButton');
+
+// Add click event listener
+createButton.addEventListener('click', function() {
+    // Redirect to the create.blade.php file in the same folder
+    window.location.href = "{{ url('create.blade.php') }}";
+});
 </script>
 
 @endpush
