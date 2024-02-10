@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-      Create Brokerage
+      Create Partners
   @endsection
 
 @section('content')
@@ -10,8 +10,8 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <x-cardheader title="Create Brokerage" />
-              <x-form action="{{ route('brokerages.store') }}" method="POST" enctype="multipart/form-data">
+              <x-cardheader title="Create Partners" />
+              <x-form action="{{ route('partners.store') }}" method="POST" enctype="multipart/form-data">
                 <div class="card-body">
                 <x-forms.input title="Name" type="text" name="name" placeholder="Name" />
                 <x-forms.input title="Email" type="email" name="email" placeholder="Email" />
@@ -25,7 +25,7 @@
                     {!! Form::select('roles[]', $roles,[], array('class' => 'form-control selectric')) !!}
                   </div>
                 </div>
-                <x-forms.primary-button>Submit</x-forms.primary-button>            
+                <x-forms.primary-button>Submit</x-forms.primary-button>
                 </div>
               </x-form>
             </div>

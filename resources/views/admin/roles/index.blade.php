@@ -5,20 +5,50 @@
 @endsection
 
 @section('content')
-    <section class="section">
-        <div class="section-body">
-          <div class="row">
-            <div class="col-12">
-                <div class="card-header d-flex justify-content-between">
-                  <h3>
-                    Roles
-                  </h3>
 
-                  <div class=" text-right">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fa fa-plus text-primary" aria-hidden="true"></i> Add User
-                    </button>
-                </div>
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card-header d-flex justify-content-between">
+                <h3>
+                  Roles
+                </h3>
+
+                <div class=" text-right">
+                  <button class="btn btn-primary" type="button">
+                      <i class="fa fa-plus text-primary" aria-hidden="true"></i> Add User
+                  </button>
+              </div>
+              <div class="card-body">
+              <div class="table-responsive text-nowrap">
+    <table class="table table-striped">
+      <thead>
+                      <tr>
+                        <th>No</th>
+                        <th></th>
+                        <th>Role Name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($roles as $key => $role)
+                      <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td></td>
+                        <td>{{ $role->name }}</td>
+                        <td>
+                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
+                                <i class="fa fa-eye text-success" aria-hidden="true"></i>
+                            </button>
+                            @can('role-edit')
+                            <a href="{{ route('roles.edit',$role->id) }}" class="btn "><i class="fa fa-edit text-dark" aria-hidden="true"></i></a>
+                            @endcan
+                            @can('role-delete')
+                            <button class="btn " type="button" onclick="deleteItem({{ $role->id }})">
+                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </button>
+
 
                 </div>
             </div>
@@ -29,7 +59,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                      
+
 
                         <div class="card-body">
                             <div class="table-responsive text-nowrap">

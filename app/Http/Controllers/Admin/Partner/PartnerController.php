@@ -32,7 +32,7 @@ class PartnerController extends Controller
 
         return view('admin.partners.index',compact('users', 'referralUrlcounts'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +43,7 @@ class PartnerController extends Controller
         $roles = Role::where('name', 'partner')->pluck('name','name')->all();
         return view('admin.partners.create',compact('roles'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +58,7 @@ class PartnerController extends Controller
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
-    
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
 
@@ -67,24 +67,15 @@ class PartnerController extends Controller
         $input['email_verified_at'] = Carbon::now();
 
         $input['referral_code'] = Str::random(8);
-        $input['referral_url'] = route('register', ['referral_code' => $input['referral_code']]);
+       
 
-        if ($input['referring_url']) {
-            $referredUser = User::where('referral_url', $input['referring_url'])->first();
-            if ($referredUser) {
-                // Increment the points of the referred user
-                $referredUser->dash_pass += 10;
-                $referredUser->save();
-            }
-        }
-    
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
         Toastr::success('Partner created successfully.', 'Success');
         return redirect()->route('partners.index');
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -96,7 +87,7 @@ class PartnerController extends Controller
         $user = User::find($id);
         $roles = Role::where('name', 'partner')->pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
-    
+
         return view('admin.partners.edit',compact('user','roles','userRole'));
     }
 
@@ -115,13 +106,13 @@ class PartnerController extends Controller
 
         $promocodes = PromoCode::where('user_id', $id)->orderBy('id', 'desc')->get();
 
-        $license = License::with('brokerageid')->where('Brokerage_id', $id)->orderBy('id', 'desc')->first();
+        $license = License::with('partnerid')->where('partner_id', $id)->orderBy('id', 'desc')->first();
         $students = User::role('student')->where('parent_id', $id)->orderBy('id', 'desc')->get();
         $studentcounts = User::role('student')->where('parent_id', $id)->orderBy('id', 'desc')->count();
-    
+
         return view('admin.partners.view',compact('user','roles','userRole', 'users', 'license', 'referralUrlcounts', 'referralCount', 'students', 'studentcounts', 'promocodes'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -139,17 +130,17 @@ class PartnerController extends Controller
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);
-    
+
         $input = $request->all();
-        if(!empty($input['password'])){ 
+        if(!empty($input['password'])){
             $input['password'] = Hash::make($input['password']);
         }else{
             $input['password'] = $user->password;
         }
-        
+
         $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
-    
+
         $user->assignRole($request->input('roles'));
 
         Toastr::success('Partner updated successfully.', 'Success');
@@ -173,7 +164,7 @@ class PartnerController extends Controller
 
         $fileName = null;
 
-        if ($request->hasFile('image')) 
+        if ($request->hasFile('image'))
         {
             $image = $request->file('image');
             $name = time().'.'.$image->getClientOriginalExtension();
@@ -201,7 +192,7 @@ class PartnerController extends Controller
             'old_password' => 'required|string|min:6|max:16',
             'password' => 'required|string|min:6|max:16|same:confirm-password',
         ]);
-    
+
         if (!Hash::check($request->old_password, auth()->user()->password)) {
             return back()->withErrors([
                 'old_password' => 'Old password is not correct'
@@ -215,7 +206,7 @@ class PartnerController extends Controller
         Toastr::success('Password has been changed.', 'Success');
         return redirect()->back();
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *

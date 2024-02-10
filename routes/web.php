@@ -37,7 +37,7 @@ use App\Http\Controllers\Admin\Exam\ExamController;
 |
 */
 Route::middleware('prevent-back-history')->group(function () {
-    
+
     Route::get('/login', function () {
         return redirect('/login');
     })->name('home');
@@ -72,7 +72,7 @@ Route::middleware('prevent-back-history')->group(function () {
 
             // Dashboard
             Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboards.index')->middleware('permission:dashboard-list');
-                                            
+
             // Users
             Route::controller(UserController::class)->prefix('users')->group(function () {
 
@@ -329,12 +329,12 @@ Route::middleware('prevent-back-history')->group(function () {
             Route::controller(SettingController::class)->prefix('settings')->middleware('permission:setting-list')->group(function () {
 
                 Route::get('', 'index')->name('settings.index')->middleware('permission:setting-list');
-                Route::post('', 'store')->name('settings.store')->middleware('permission:setting-list');    
+                Route::post('', 'store')->name('settings.store')->middleware('permission:setting-list');
                 Route::get('/updates', 'index')->name('update.index')->middleware('permission:updates-list');
                 Route::get('/updates/add', 'create')->name('update.create')->middleware('permission:updates-create');
                 Route::post('/updates/store', 'store')->name('update.store')->middleware('permission:updates-create');
-                Route::get('/updates/edit/{id}', 'edit')->name('update.edit')->middleware('permission:updates-edit');      
-                Route::post('/updates/update/{id}', 'update')->name('updates.edit')->middleware('permission:updates-edit');        
+                Route::get('/updates/edit/{id}', 'edit')->name('update.edit')->middleware('permission:updates-edit');
+                Route::post('/updates/update/{id}', 'update')->name('updates.edit')->middleware('permission:updates-edit');
                 Route::post('/updates/delete/{id}', 'destroy')->name('update.delete')->middleware('permission:updates-delete');
 
                 // Route::get('/information', 'contactInformation')->name('settings.information');
