@@ -119,72 +119,7 @@
                             <div class="tab-content tab-bordered" id="myTab3Content">
                                 <div class="tab-pane fade show active" id="details" role="tabpanel"
                                     aria-labelledby="detail-tab2">
-                                    <div class="row mt-3 mb-3" style="justify-content: space-around;">
-                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
-                                            <div class="card-statistic-4">
-                                                <div class="align-items-center justify-content-between">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ps-0 pe-0 pt-3">
-                                                        <div class="card-content text-center">
-                                                            <h5 class="font-16 ">License Type</h5>
-                                                            <h2 class="mb-3 font-18 boxTitle">Broker</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
-                                            <div class="card-statistic-4">
-                                                <div class="align-items-center justify-content-between">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ps-0 pe-0 pt-3">
-                                                        <div class="card-content text-center" style="width: 110px;">
-                                                            <h5 class="font-16">License Status</h5>
-                                                            <h2 class="mb-3 font-18 boxTitle">Active</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
-                                            <div class="card-statistic-4">
-                                                <div class="align-items-center justify-content-between">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                        <div class="card-content text-center" style="width: 110px;">
-                                                            <h5 class="font-16">License Number</h5>
-                                                            <h2 class="mb-3 font-16 boxTitle">SAS5261145</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
-                                            <div class="card-statistic-4">
-                                                <div class="align-items-center justify-content-between">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                        <div class="card-content text-center" style="width: 110px;">
-                                                            <h5 class="font-16">Member Since</h5>
-                                                            <h2 class="mb-3 font-18 boxTitle">12-15-2021</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
-                                            <div class="card-statistic-4">
-                                                <div class="align-items-center justify-content-between">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                        <div class="card-content text-center rounded" style="width: 110px;">
-                                                            <h5 class="font-14">Do Not Call / Contact</h5>
-                                                            <h2 class="mb-3 font-18 boxTitle">Clear</h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="row">
 
                                         <div class="col-12 col-md-12 col-lg-6">
@@ -490,6 +425,72 @@
                                 </div>
                                 <div class="tab-pane fade show" id="ccp" role="tabpanel"
                                     aria-labelledby="ccp-tab2">
+                                    <div class="row mt-3 mb-3" style="justify-content: space-around;">
+                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
+                                            <div class="card-statistic-4">
+                                                <div class="align-items-center justify-content-between">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ps-0 pe-0 pt-3">
+                                                        <div class="card-content text-center">
+                                                            <h5 class="font-16 ">License Type</h5>
+                                                            <h2 class="mb-3 font-18 boxTitle">Broker</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
+                                            <div class="card-statistic-4">
+                                                <div class="align-items-center justify-content-between">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ps-0 pe-0 pt-3">
+                                                        <div class="card-content text-center" style="width: 110px;">
+                                                            <h5 class="font-16">License Status</h5>
+                                                            <h2 class="mb-3 font-18 boxTitle">Active</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
+                                            <div class="card-statistic-4">
+                                                <div class="align-items-center justify-content-between">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                        <div class="card-content text-center" style="width: 110px;">
+                                                            <h5 class="font-16">License Number</h5>
+                                                            <h2 class="mb-3 font-16 boxTitle">SAS5261145</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
+                                            <div class="card-statistic-4">
+                                                <div class="align-items-center justify-content-between">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                        <div class="card-content text-center" style="width: 110px;">
+                                                            <h5 class="font-16">Member Since</h5>
+                                                            <h2 class="mb-3 font-18 boxTitle">12-15-2021</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12 rounded cardShadow mb-2">
+                                            <div class="card-statistic-4">
+                                                <div class="align-items-center justify-content-between">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                        <div class="card-content text-center rounded" style="width: 110px;">
+                                                            <h5 class="font-14">Do Not Call / Contact</h5>
+                                                            <h2 class="mb-3 font-18 boxTitle">Clear</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
 
                                         <div class="col-12 col-md-12 col-lg-6">
