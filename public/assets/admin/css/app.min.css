@@ -17466,3 +17466,11 @@ a.text-dark:hover {
     -webkit-font-feature-settings: 'liga';
     font-feature-settings: 'liga'
 }
+.boxTitle{
+    color: #6777ef;
+    font-weight: bold;
+}
+.cardShadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+
+}

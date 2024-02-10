@@ -10,20 +10,33 @@ Brokerage Manage
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <x-cardheader title="Brokerages" />
-                    <x-forms.primary-button id="createButton" class="float-right">Create</x-forms.primary-button>
+                    <div class="card-header d-flex justify-content-between">
+                        <h3>
+                            Brokerages
+                        </h3>
+
+                        <div class="text-right">
+                            <button class="btn btn-primary rounded ps-2 pe-2 pt-1 pb-1" type="button" id="createButton">
+                                <i class="fa fa-plus text-primary" aria-hidden="true"></i> Add Broker
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Partner</th>
-                                        <th>Brokerage Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>State</th>
-                                        <th>Role</th>
+                                        <th>BROKERAGE ID</th>
+                                        <th>PARTNER</th>
+                                        <th>BROKERAGE NAME</th>
+                                        <th>MASTRER BRAND</th>
+                                        <th>RM</th>
+                                        <th>PHONE</th>
+                                        <th>STATE</th>
+                                        <th>LICENSES</th>
+                                        <th>TYPE</th>
+                                        <th>STUDENTS</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -38,10 +51,12 @@ Brokerage Manage
                                             NO
                                             @endif
                                         </td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->phone }}</td>
-                                        <td>{{ $user->state }}</td>
+                                        <td>Barbie Reynolds</td>
+                                        <td>Coldwell Banker</td>
+                                        <td>Jackie Onasis</td>
+                                        <td>231-235-4575</td>
+                                        <td>Arizona</td>
+                                        <td>40</td>
                                         <td>
                                             @if(!empty($user->getRoleNames()))
                                             @foreach($user->getRoleNames() as $v)
@@ -49,21 +64,24 @@ Brokerage Manage
                                             @endforeach
                                             @endif
                                         </td>
+                                        <td>12</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                    data-bs-toggle="dropdown">
-                                                    <i class="ti ti-dots-vertical"></i>
-                                                </button>
+                                                <button type="button" class="btn p-0 dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <i class="ti ti-dots-vertical"></i>
+                                            </button>
                                                 <div class="dropdown-menu">
                                                     @can('user-edit')
                                                     <a class="dropdown-item"
-                                                        href="{{ route('brokerages.view', $user->id) }}">View</a>
+                                                        href="{{ route('brokerages.view', $user->id) }}">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i> View</a>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('brokerages.edit', $user->id) }}">Edit</a>
+                                                        href="{{ route('brokerages.edit', $user->id) }}">
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                                                     @endcan
                                                     @can('user-delete')
-                                                    <button class="dropdown-item btn btn-danger" type="button"
+                                                    <button class="dropdown-item btn " type="button"
                                                         onclick="deleteItem({{ $user->id }})">
                                                         <i class="fa fa-trash" aria-hidden="true"></i> Delete
                                                     </button>
