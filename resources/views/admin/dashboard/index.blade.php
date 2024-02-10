@@ -7,6 +7,7 @@
 @section('content')
 
 @role('admin')
+
     <!-- <section class="section">
         <div class="row ">
             <x-maincard title="User" count="{{ $users }}" image="{{ asset('assets/admin/img/banner/1.png') }}" />
